@@ -1,12 +1,15 @@
 import numpy as np
 import time
+import subprocess
 
 class Game:
-
+    PATH_TO_GAME = 'C:\\Users\\noams\\AppData\\Local\\Microsoft\\WindowsApps\\Stormshot.exe'
     def __init__(self, vision, controller):
         self.vision = vision
         self.controller = controller
         self.state = 'not started'
+        subprocess.Popen([self.PATH_TO_GAME])
+        print("Stormshot successfully started")
 
     def run(self):
         while True:
